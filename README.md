@@ -60,4 +60,11 @@ Auto generate features to match the established sqlalchemy models. Can be used t
 ```sh
 alembic revision --autogenerate -m "autocomplete my schemas"
 ```
-        
+
+## Deployment to Heroku
+
+```sh
+
+heroku create fastapi-lesson-ms
+```
+New `git remote` appears `heroku` then `git push heroku main` is used to push.

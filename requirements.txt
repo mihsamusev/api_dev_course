@@ -1,17 +1,59 @@
-brotlipy==0.7.0
-certifi==2021.5.30
-cffi @ file:///tmp/build/80754af9/cffi_1625814692085/work
-chardet @ file:///tmp/build/80754af9/chardet_1607706775000/work
-conda==4.10.3
-conda-package-handling @ file:///tmp/build/80754af9/conda-package-handling_1618262147379/work
-cryptography @ file:///tmp/build/80754af9/cryptography_1616767007030/work
-idna @ file:///home/linux1/recipes/ci/idna_1610986105248/work
-pycosat==0.6.3
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
-PySocks @ file:///tmp/build/80754af9/pysocks_1605305812635/work
-requests @ file:///tmp/build/80754af9/requests_1608241421344/work
-ruamel-yaml-conda @ file:///tmp/build/80754af9/ruamel_yaml_1616016711199/work
-six @ file:///tmp/build/80754af9/six_1623709665295/work
-tqdm @ file:///tmp/build/80754af9/tqdm_1625563689033/work
-urllib3 @ file:///tmp/build/80754af9/urllib3_1625084269274/work
+alembic==1.7.5
+anyio==3.5.0
+asgiref==3.4.1
+astroid==2.9.3
+bcrypt==3.2.0
+black==21.12b0
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.10
+click==8.0.3
+cryptography==36.0.1
+dnspython==2.1.0
+ecdsa==0.17.0
+email-validator==1.1.3
+fastapi==0.71.0
+flake8==4.0.1
+greenlet==1.1.2
+h11==0.12.0
+httptools==0.2.0
+idna==3.3
+isort==5.10.1
+itsdangerous==2.0.1
+Jinja2==3.0.3
+lazy-object-proxy==1.7.1
+Mako==1.1.6
+MarkupSafe==2.0.1
+mccabe==0.6.1
+mypy-extensions==0.4.3
+orjson==3.6.5
+passlib==1.7.4
+pathspec==0.9.0
+platformdirs==2.4.1
+psycopg2-binary==2.9.3
+pyasn1==0.4.8
+pycodestyle==2.8.0
+pycparser==2.21
+pydantic==1.9.0
+pyflakes==2.4.0
+pylint==2.12.2
+python-dotenv==0.19.2
+python-jose==3.3.0
+python-multipart==0.0.5
+PyYAML==5.4.1
+requests==2.27.1
+rsa==4.8
+six==1.16.0
+sniffio==1.2.0
+SQLAlchemy==1.4.29
+starlette==0.17.1
+toml==0.10.2
+tomli==1.2.3
+typing_extensions==4.0.1
+ujson==4.3.0
+urllib3==1.26.8
+uvicorn==0.15.0
+uvloop==0.16.0
+watchgod==0.7
+websockets==10.1
+wrapt==1.13.3
