@@ -64,9 +64,26 @@ alembic revision --autogenerate -m "autocomplete my schemas"
 ## Deployment to Heroku
 
 ```sh
-
 heroku create fastapi-lesson-ms
 ```
+
 New `git remote` appears `heroku` then `git push heroku main` is used to push.
 
 Specify commands to start heroku using process file `Procfile`
+
+adding a free postgresq to heroku. Its credentials can be accessed through the dashboard.
+
+```sh
+heroku addons:create heroku-postgresql:hobby-dev
+# returns: Created postgresql-vertical-42493 as DATABASE_URL
+```
+Initially our tables wont be there, we need to run the command to build them.
+```sh
+heroku run "alembic upgrade head"
+```
+
+Settings -> Config Vars to copy environment variables from the DB instance to be accessible in the app.
+
+To restart the app `heroku ps restart`
+
+Status can be monitored with `heroku logs -t`
