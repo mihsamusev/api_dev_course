@@ -68,3 +68,5 @@ alembic revision --autogenerate -m "autocomplete my schemas"
 heroku create fastapi-lesson-ms
 ```
 New `git remote` appears `heroku` then `git push heroku main` is used to push.
+
+Specify commands to start heroku using process file `Procfile`
