@@ -1,0 +1,31 @@
+version: "3"
+services:
+  api:
+    build: .
+    depends_on:
+      - postgres-db
+    ports:
+      - 8000:8000
+    environment:
+      - DB_HOSTNAME=postgres-db
+      - DB_PORT=5432
+      - DB_PASSWORD=admin
+      - DB_NAME=fastapi
+      - DB_USERNAME=postgres
+      - JWT_SECRET_KEY=a424774da65778c820f2f2a77eee2be19357603633caf8fcd2b33254528df70d # # to get a string like this run: openssl rand -hex 32
+      - JWT_ALGORITHM=HS256
+      - JWT_TOKEN_EXPIRE_MINUTES=60
+    volumes:
+      - ./:/usr/src/app:ro # read only bind mount
+    command: [ "bash", "-c", "./start.sh --reload" ]
+  postgres-db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=fastapi
+
+    volumes:
+      - pgdb:/var/lib/postgresql/data
+
+volumes:
+  pgdb:

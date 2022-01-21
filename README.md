@@ -6,7 +6,7 @@ Conda env
 ```sh
 conda create -n fastapi python=3.9
 conda activate fastapi
-pip install uvicorn fastapi[all] sqlalchemy psycopg2 passlib[bcrypt] python-jose[cryptography] alembic # our stack
+pip install pytest uvicorn fastapi[all] sqlalchemy psycopg2 passlib[bcrypt] python-jose[cryptography] alembic # our stack
 # or pip install -r requirements.txt
 ```
 
@@ -87,3 +87,13 @@ Settings -> Config Vars to copy environment variables from the DB instance to be
 To restart the app `heroku ps restart`
 
 Status can be monitored with `heroku logs -t`
+
+## Dockerize our app
+
+```sh
+docker build -t fastapi .
+```
+
+```
+docker run api alembic upgrade head
+```

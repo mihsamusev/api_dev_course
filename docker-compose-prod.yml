@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+    image: mihsamusev/fastapi:latest
+    depends_on:
+      - postgres-db
+    ports:
+      - 80:8000
+    environment:
+      - DB_HOSTNAME=${DB_HOSTNAME}
+      - DB_PORT=${DB_PORT}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY} # # to get a string like this run: openssl rand -hex 32
+      - JWT_ALGORITHM=${JWT_ALGORITHM}
+      - JWT_TOKEN_EXPIRE_MINUTES=${JWT_TOKEN_EXPIRE_MINUTES}
+    command: [ "bash", "-c", "./start.sh" ]
+  postgres-db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+    volumes:
+      - pgdb:/var/lib/postgresql/data
+
+volumes:
+  pgdb:

@@ -8,10 +8,6 @@ from app.routers import auth, posts, users, vote
 # models.Base.metadata.create_all(bind=engine)
 # we use alembic instead
 
-# setup CORS policy
-origins = ["*"]  # public API, or narrow down to list of domains
-
-
 app = FastAPI(
     title="Social Network",
     description=open("README.md", "r", encoding="UTF").read(),
@@ -28,6 +24,9 @@ app = FastAPI(
     },
 )
 
+# setup CORS policy
+origins = ["*"]  # public API, or narrow down to list of domains
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -39,7 +38,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message", "i root"}
+    return {"message": "i changed, a lot"}
 
 
 app.include_router(posts.router)

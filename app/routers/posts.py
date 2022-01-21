@@ -19,8 +19,10 @@ def create_posts(
     db: Session = Depends(get_db),
     user: models.User = Depends(oauth2.get_current_user),
 ):
-    new_post = models.Post(owner_id=user.id, **post.dict())
+    if not user:
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Not authorized")
 
+    new_post = models.Post(owner_id=user.id, **post.dict())
     db.add(new_post)
     db.commit()
     db.refresh(new_post)
@@ -51,6 +53,7 @@ def get_posts(
         .offset(skip)
         .all()
     )
+    print(result)
     return result
 
 
