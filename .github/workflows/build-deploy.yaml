@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    environment: build_and_test
     env:
       DB_HOSTNAME: ${{secrets.DB_HOSTNAME}}
       DB_PORT: ${{secrets.DB_PORT}}
@@ -12,7 +13,7 @@ jobs:
       DB_USERNAME: ${{secrets.DB_USERNAME}}
       JWT_SECRET_KEY: ${{secrets.JWT_SECRET_KEY}}
       JWT_ALGORITHM: ${{secrets.JWT_ALGORITHM}}
-      JWT_TOKEN_EXPIRE_MINUTES: 60 #${{secrets.JWT_TOKEN_EXPIRE_MINUTES}}
+      JWT_TOKEN_EXPIRE_MINUTES: ${{secrets.JWT_TOKEN_EXPIRE_MINUTES}}
 
     runs-on: ubuntu-latest
     steps:
