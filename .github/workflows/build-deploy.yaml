@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull git repo
-        uses: actions/checout@v2
+        uses: actions/checkout@v2
 
       - name: setup python
         uses: actions/setup-python@v2
