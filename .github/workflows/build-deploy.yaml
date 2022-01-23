@@ -1,0 +1,21 @@
+name: build and deploy code
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull git repo
+        uses: actions/checout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: update pip
+        run: python -m pip install --upgrade pip
+
+      - name: install dependencies
+        run: pip install -r requirements.txt
