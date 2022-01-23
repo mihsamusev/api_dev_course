@@ -5,7 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: build_and_test
+    environment:
+      name: build_and_test
     env:
       DB_HOSTNAME: ${{secrets.DB_HOSTNAME}}
       DB_PORT: ${{secrets.DB_PORT}}
@@ -48,4 +49,4 @@ jobs:
       - name: run pytest
         run: |
           pip install pytest
-          pytest -v
+          pytest
