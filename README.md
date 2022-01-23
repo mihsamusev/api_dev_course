@@ -1,6 +1,10 @@
 ## API development course
 Develop and deploy backend for a forum using python FastAPI and other tools. Based on [this course](https://www.youtube.com/watch?v=0sOvCWFmrtA&t=2005s&ab_channel=freeCodeCamp.org).
 
+## CI/CD status
+
+[![build_and_test](https://github.com/mihsamusev/api_dev_course/actions/workflows/build-deploy.yaml/badge.svg)](https://github.com/mihsamusev/api_dev_course/actions/workflows/build-deploy.yaml)
+
 ## Environment
 Conda env
 ```sh
