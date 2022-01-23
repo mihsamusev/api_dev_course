@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     environment: build_and_test
     env:
       DB_HOSTNAME: ${{secrets.DB_HOSTNAME}}
@@ -15,7 +16,20 @@ jobs:
       JWT_ALGORITHM: ${{secrets.JWT_ALGORITHM}}
       JWT_TOKEN_EXPIRE_MINUTES: ${{secrets.JWT_TOKEN_EXPIRE_MINUTES}}
 
-    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: ${{secrets.DB_PASSWORD}}
+          POSTGRES_DB: ${{secrets.DB_NAME}}_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retires 5
+
     steps:
       - name: pull git repo
         uses: actions/checkout@v2
