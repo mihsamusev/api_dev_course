@@ -5,14 +5,14 @@ on: [push]
 jobs:
   build:
     env:
-      DB_HOSTNAME: ${{DB_HOSTNAME}}
-      DB_PORT: ${{DB_PORT}}
-      DB_PASSWORD: ${{DB_PASSWORD}}
-      DB_NAME: ${{DB_NAME}}
-      DB_USERNAME: ${{DB_USERNAME}}
-      JWT_SECRET_KEY: ${{JWT_SECRET_KEY}}
-      JWT_ALGORITHM: ${{JWT_ALGORITHM}}
-      JWT_TOKEN_EXPIRE_MINUTES: ${{JWT_TOKEN_EXPIRE_MINUTES}}
+      DB_HOSTNAME: ${{secrets.DB_HOSTNAME}}
+      DB_PORT: ${{secrets.DB_PORT}}
+      DB_PASSWORD: ${{secrets.DB_PASSWORD}}
+      DB_NAME: ${{secrets.DB_NAME}}
+      DB_USERNAME: ${{secrets.DB_USERNAME}}
+      JWT_SECRET_KEY: ${{secrets.JWT_SECRET_KEY}}
+      JWT_ALGORITHM: ${{secrets.JWT_ALGORITHM}}
+      JWT_TOKEN_EXPIRE_MINUTES: ${{secrets.JWT_TOKEN_EXPIRE_MINUTES}}
 
     runs-on: ubuntu-latest
     steps:
